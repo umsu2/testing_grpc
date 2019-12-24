@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package helloworld;
+
+import "google/protobuf/empty.proto";
+
+service HelloWorldSvc {
+    rpc SayHello (HelloRequest) returns (HelloReply);
+    rpc SayBye (ByeRequest) returns (google.protobuf.Empty);
+}
+
+message ByeRequest {
+    string name = 1;
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
